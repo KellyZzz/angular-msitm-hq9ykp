@@ -2,18 +2,29 @@
 <div class="containerTitle">
   <div class="oneTitle"> ProductID </div>
   <div class="twoTitle"> Name </div>
-  <div class="threeTitle"> Image </div>
+  <!-- <div class="threeTitle"> Image </div> -->
   <div class="eightTitle">Additional Details</div>
 </div>
 <div class="containerListItems" *ngFor="let HProduct of HProducts; let i = index" [style.background-color]="changeColorOne()">
+
   <div class="one">{{HProduct.HardwareID}}</div>
   <div class="two">{{HProduct.Product_Name}}</div>
-    <div class="three">
-      <img [src]="base64Image" style="width:100px;height75px;"/>
-    </div>
-    <div class="eight">
+
+  <!-- <div class="three">
+      <form [formGroup]="imageForm" (ngSubmit)="onSubmit_Image()">
+        <button [disabled]="loading" class="btn btn-primary">
+          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+          Show Image
+        </button>
+
+        <img [src]="base64Image" style="width:100px;height75px;"/>
+      </form>
+  </div> -->
+  
+  <div class="eight">
     <button (click)="editHProduct(i)" [routerLink]="['/hProd', HProduct.HardwareID]" > Details </button>
   </div>
+
 </div>
 <button [routerLink]="['/hEdit']" > Add New Product </button>
 </div>

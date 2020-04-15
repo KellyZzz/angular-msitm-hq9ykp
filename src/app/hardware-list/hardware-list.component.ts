@@ -5,6 +5,7 @@ import { HProd } from '../models/HProd';
 import { products } from '../products';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -20,7 +21,8 @@ export class HardwareListComponent implements OnInit {
   color;
   base64Image: any;
   public HProducts: Array<any> = [];
-  public HdProducts: Array<any> = [];
+  
+  
 
   constructor(
     
