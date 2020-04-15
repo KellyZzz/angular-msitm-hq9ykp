@@ -49,7 +49,7 @@ export class HProdDetailComponent implements OnInit {
    this.imageForm = this.formBuilder.group({});
   }
 
-  onSubmit() {
+  onSubmit_Image() {
 
     for (this.p in this.HProducts) {
     //main issue is target the correct imageUrl here
