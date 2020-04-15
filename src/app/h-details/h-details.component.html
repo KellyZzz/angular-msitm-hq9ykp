@@ -53,6 +53,10 @@
       <p>{{HProduct.Image_URL}}</p>
     </div>
     <div class="Cell">
+      <button [disabled]="loading" class="btn btn-primary">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Show Image
+      </button>
       <img [src]="base64Image" style="width:100px;height75px;"/>
     </div>
   </div>

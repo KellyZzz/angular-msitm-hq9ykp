@@ -40,16 +40,18 @@ export class HProdDetailComponent implements OnInit {
 
   ngOnInit() {
    this.getHProd(this.route.snapshot.params.id);
+  }
 
-  //main issue is target the correct imageUrl here
-   let imageUrl = this.HProducts[this.id]['Image_URL']
+  onSubmit() {
+    //main issue is target the correct imageUrl here
+    let imageUrl = this.HProducts[this.id]['Image_URL']
    
-   this.getBase64ImageFromURL(imageUrl).subscribe(base64data => {
+    this.getBase64ImageFromURL(imageUrl).subscribe(base64data => {
       console.log(base64data);
       this.base64Image = 'data:image/jpg;base64,' + base64data;
     });
+
   }
- 
 
   getBase64ImageFromURL(url: string) {
     return Observable.create((observer: Observer<string>) => {
