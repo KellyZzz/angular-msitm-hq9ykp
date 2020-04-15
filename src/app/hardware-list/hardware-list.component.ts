@@ -4,6 +4,7 @@ import { ConnectingToDatabaseService } from '../services/connecting-to-database.
 import { HProd } from '../models/HProd';
 import { products } from '../products';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -12,10 +13,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./hardware-list.component.css'],
   providers: [ ConnectingToDatabaseService ]
 })
+
 export class HardwareListComponent implements OnInit {
   pager = {};
   product;
   color;
+  base64Image: any;
   public HProducts: Array<any> = [];
 
   constructor(private _dbService: ConnectingToDatabaseService,
@@ -55,6 +58,14 @@ export class HardwareListComponent implements OnInit {
   ngOnInit() {
     this.getData();
     // this.route.queryParams.subscribe(response => this.loadPage('1'));
+
+    let imageUrl = 'https://images.pexels.com/photos/1713953/pexels-photo-1713953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+
+    this.getBase64ImageFromURL(imageUrl).subscribe(base64data => {
+      console.log(base64data);
+      this.base64Image = 'data:image/jpg;base64,' + base64data;
+    });
+
   }
 
   changeColorOne() {
@@ -64,6 +75,36 @@ export class HardwareListComponent implements OnInit {
      } else {
       return '#f6f6f6';
      }
+  }
+
+  getBase64ImageFromURL(url: string) {
+    return Observable.create((observer: Observer<string>) => {
+      let img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.src = url;
+      if (!img.complete) {
+        img.onload = () => {
+          observer.next(this.getBase64Image(img));
+          observer.complete();
+        };
+        img.onerror = (err) => {
+          observer.error(err);
+        };
+      } else {
+        observer.next(this.getBase64Image(img));
+        observer.complete();
+      }
+    });
+  }
+
+  getBase64Image(img: HTMLImageElement) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+    var dataURL = canvas.toDataURL("image/png");
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
   }
 
   model: any = {};

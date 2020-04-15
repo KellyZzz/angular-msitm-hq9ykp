@@ -1,14 +1,16 @@
 <div class="tableWrapper">
 <div class="containerTitle">
-  <div class="oneTitle">ProductID</div>
-  <div class="twoTitle"> Name</div>
-  <div class="threeTitle"> Image</div>
+  <div class="oneTitle"> ProductID </div>
+  <div class="twoTitle"> Name </div>
+  <div class="threeTitle"> Image </div>
   <div class="eightTitle">Additional Details</div>
 </div>
 <div class="containerListItems" *ngFor="let HProduct of HProducts; let i = index" [style.background-color]="changeColorOne()">
   <div class="one">{{HProduct.HardwareID}}</div>
   <div class="two">{{HProduct.Product_Name}}</div>
-    <div class="three"></div>
+    <div class="three">
+      <img [src]="base64Image" style="width:200px;height150px;"/>
+    </div>
     <div class="eight">
     <button (click)="editHProduct(i)" [routerLink]="['/hProd', HProduct.HardwareID]" > Details </button>
   </div>
