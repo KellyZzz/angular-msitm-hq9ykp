@@ -20,8 +20,11 @@ export class HardwareListComponent implements OnInit {
   color;
   base64Image: any;
   public HProducts: Array<any> = [];
+  public HdProducts: Array<any> = [];
 
-  constructor(private _dbService: ConnectingToDatabaseService,
+  constructor(
+    
+  private _dbService: ConnectingToDatabaseService,
   private _http: HttpClient,
   private route: ActivatedRoute) { }
 
@@ -59,7 +62,8 @@ export class HardwareListComponent implements OnInit {
     this.getData();
     // this.route.queryParams.subscribe(response => this.loadPage('1'));
 
-    let imageUrl = 'https://images.pexels.com/photos/1713953/pexels-photo-1713953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+    //  leave it here for rn, let's try in detail first since you already set up by each specific products in detail page.
+    let imageUrl = 'https://images.pexels.com/photos/1713953/pexels-photo-1713953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 
     this.getBase64ImageFromURL(imageUrl).subscribe(base64data => {
       console.log(base64data);

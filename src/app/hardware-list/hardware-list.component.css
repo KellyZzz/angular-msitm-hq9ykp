@@ -141,54 +141,6 @@
   color:#ffffff;
 }
 
-.four {
-  flex:1;
-  padding:10px;
-}
-
-.fourTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
-.five {
-  flex:1;
-  padding:10px;
-}
-
-.fiveTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
-.six {
-  flex:1;
-  padding:10px;
-}
-
-.sixTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
-.seven {
-  flex:1;
-  padding:10px;
-}
-
-.sevenTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
 .eight {
   flex:1;
   padding:10px;
@@ -201,7 +153,12 @@
   color:#ffffff;
 }
 
-
+/* seems like it does not work for right now */
+.img {
+  padding:10px;
+  width:100px;
+  height:75px;
+}
 
 .containerListItems {
   display:flex;
