@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { HProd } from '../models/HProd';
 import { ConnectingToDatabaseService } from "../services/connecting-to-database.service";
@@ -16,10 +17,15 @@ import { Observable } from 'rxjs';
 export class HProdDetailComponent implements OnInit {
   public HProducts: Array<any> = [];
   private sub: any;
+  imageForm: FormGroup;
   id: number;
   base64Image: any;
+  loading = false;
+  submitted = false;
+  p:string;
 
   constructor(
+    private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private hProdService: ConnectingToDatabaseService,
     private location: Location
@@ -40,16 +46,21 @@ export class HProdDetailComponent implements OnInit {
 
   ngOnInit() {
    this.getHProd(this.route.snapshot.params.id);
+   this.imageForm = this.formBuilder.group({});
   }
 
   onSubmit() {
+
+    for (this.p in this.HProducts) {
     //main issue is target the correct imageUrl here
-    let imageUrl = this.HProducts[this.id]['Image_URL']
+    let imageUrl = this.HProducts[this.p]['Image_URL']
    
     this.getBase64ImageFromURL(imageUrl).subscribe(base64data => {
       console.log(base64data);
       this.base64Image = 'data:image/jpg;base64,' + base64data;
     });
+
+    }
 
   }
 
