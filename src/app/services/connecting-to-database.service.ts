@@ -66,7 +66,7 @@ export class ConnectingToDatabaseService {
       return this._http.get(api);
   }
 
-  private UserUrl = `http://localhost:3000/api/Users`;  // URL to web api
+  private UserUrl = `http://localhost:3000/api/Users?_size=100`;  // URL to web api
   public getUser(id?: string) {
     const url = `${this.UserUrl}`;
     return this._http.get(url);

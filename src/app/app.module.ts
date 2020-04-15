@@ -26,7 +26,9 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
+      { path: '', component: LoginComponent },
+      // { path: '', component: ProductListComponent },
+      { path: 'products', component: ProductListComponent },
       { path: 'products/0', component: HardwareListComponent },
       { path: 'products/1', component: SoftwareListComponent },
       { path: 'products/2', component: HCrudComponent },

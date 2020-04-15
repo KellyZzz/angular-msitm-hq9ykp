@@ -1,57 +1,8 @@
 <h2>Login</h2>
 
-    <!-- <div class="Title">
-        <p>User Details</p>
-    </div>
-
-    <div class="Heading">
-        <div class="Cell">
-            <p>User ID</p>
-        </div>
-        <div class="Cell">
-            <p>User Name</p>
-        </div>
-        <div class="Cell">
-            <p>First Name</p>
-        </div>
-      
-        <div class="Cell">
-            <p>Last Name</p>
-        </div>
-        <div class="Cell">
-            <p>Email</p>
-        </div>
-         <div class="Cell">
-            <p>Password</p>
-        </div>
-
-<div class="Table"  *ngFor="let User of Users; let i = index" >
-    <div class="Row">
-        <div class="Row">
-            <p>{{User.UserID}}</p>
-        </div>
-        <div class="Row">
-            <p>{{User.UserName}}</p>
-        </div>
-        <div class="Row">
-            <p>{{User.FirstName}}</p>
-        </div>
-      <div class="Row">
-            <p>{{User.LastName}}</p>
-        </div>
-          <div class="Row">
-            <p>{{User.Email}}</p>
-        </div>
-          <div class="Row">
-            <p>{{User.Password}}</p>
-        </div>
-    </div>
-</div> -->
-
 <html>
 
-
-<!-- <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="UserName">Username</label>
         <input type="text" formControlName="UserName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }" />
@@ -73,33 +24,5 @@
         </button>
         <a routerLink="/register" class="btn btn-link">Register</a>
     </div>
-</form> -->
+</form> 
 
-
-<!-- <!DOCTYPE html>
-<html>
-<body>
-Field1: <input type="text" id="field1" value="Hello World!"><br>
-Field2: <input type="text" id="field2"><br><br>
-<button onclick="myFunction()">Copy Text</button>
-<p>A function is triggered when the button is clicked. The function copies the text from Field1 into Field2.</p>
-<script>
-function myFunction() {
-  document.getElementById("field2").value = document.getElementById("field1").value;
-}
-</script>
-</body>
-</html> -->
-
-<button id="testButton">Press</button>
-
-<script>
-
-function test(){
-  console.log('here');
-}
-
-var button = document.getElementById('testButton');
-button.addEventListener('click', test);
-
-</script>
