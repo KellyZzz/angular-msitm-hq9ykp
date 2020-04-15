@@ -26,6 +26,9 @@
       <p>Image_URL</p>
     </div>
     <div class="Cell">
+      <p>Image Button</p>
+    </div>
+    <div class="Cell">
       <p>Image</p>
     </div>
   </div>
@@ -57,6 +60,8 @@
         <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Show Image
       </button>
+    </div>
+    <div class="Cell"> 
       <img [src]="base64Image" style="width:100px;height75px;"/>
     </div>
   </div>
