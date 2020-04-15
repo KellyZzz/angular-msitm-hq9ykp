@@ -84,7 +84,8 @@ List_one: Array<any> =[];
     }
   if ( this.flag == 0)
   {
-  this.router.navigate(['/login']);
+    window.alert("Login Unsuccessful")
+    this.router.navigate(['/login']);
     console.log("Unsuccessful")
   }
 
