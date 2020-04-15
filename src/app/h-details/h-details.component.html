@@ -55,8 +55,8 @@
 
     <div class="Cell">
     <form [formGroup]="imageForm" (ngSubmit)="onSubmit_Image()">
-      <button [disabled]="loading" class="btn btn-primary">
-        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1" id="imagebutton"></span>
+      <button [disabled]="loading" class="btn btn-primary" id="imagebutton">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Show Image
       </button>
       <img [src]="base64Image" style="width:100px;height:75px;"/>

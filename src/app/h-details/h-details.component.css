@@ -61,14 +61,14 @@
   border-top-left-radius:10px;
 }
 
-button {
+/* button {
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     overflow: hidden;
     outline:none;
-}
+} */
 
 .oneTitle {
   flex:1;
