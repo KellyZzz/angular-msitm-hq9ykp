@@ -10,6 +10,7 @@ import { first } from 'rxjs/operators';
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
+  styleUrls: [ "./register.component.css" ],
   providers: [ ConnectingToDatabaseService, AlertService ]
 })
 export class RegisterComponent implements OnInit {

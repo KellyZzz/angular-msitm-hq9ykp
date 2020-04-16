@@ -1,21 +1,15 @@
-<h2>Products</h2>
-
+<h3>Types of Products</h3>
 
 <div *ngFor="let product of products; index as productId">
 
-  <h3>
-    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
-      {{ product.name }}
-    </a>
-  </h3>
+  <h3> {{ product.name }} </h3>
+  
+  <p *ngIf="product.description"> Description: {{ product.description }} </p>
 
-  <p *ngIf="product.description">
-    Description: {{ product.description }}
-  </p>
-
-  <button (click)="share()">
-    Share
-  </button>
+  <button  class="btn btn-primary" a [title]="product.name + ' details'" [routerLink]="['/products', productId]"> View all  {{ product.name }} products
+  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+  </button> or
+  <button [routerLink]="['/hEdit']" > Add New {{ product.name }} Product </button>
 
 </div>
 

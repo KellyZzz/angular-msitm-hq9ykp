@@ -1,4 +1,4 @@
-<h2>Register</h2>
+<h3>Sign Up for a New Account</h3>
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="FirstName">First Name</label>
@@ -41,6 +41,8 @@
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Register
         </button>
-        <a routerLink="/login" class="btn btn-link">Cancel</a>
+        <button routerLink="/login" class="btn btn-primary">
+            Cancel and go Back
+        </button>
     </div>
 </form>
