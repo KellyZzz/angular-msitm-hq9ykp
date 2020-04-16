@@ -38,15 +38,6 @@ export class SoftwareListComponent implements OnInit {
   ngOnInit() {
     this.getSoftData();
   }
-  
-//   ngOnInit() {
-//   this.route.paramMap.subscribe(params => {
-//     this.product = products[+params.get('productId')];
-//   });
-// }
-//   constructor(
-//     private route: ActivatedRoute,
-//   ) { }
 
     editHProduct(editHProductInfo) {
     this.model2.name = this.HProducts[editHProductInfo].HardwareID;
