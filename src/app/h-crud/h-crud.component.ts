@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { HProd } from '../models/HProd';
 import { ConnectingToDatabaseService } from "../services/connecting-to-database.service";
-import {AlertService} from "../services/alert.service";
+import { AlertService} from "../services/alert.service";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
@@ -28,7 +28,6 @@ export class HCrudComponent implements OnInit {
 
   ngOnInit() {
     this.HProdForm = this.formBuilder.group({
-            // HardwareID: ['', Validators.required],
             Product_Name: ['', Validators.required],
             Long_Description: ['', Validators.required],
             SKU: ['', [Validators.required, Validators.minLength(6)]],Tax_Category: ['', Validators.required],
