@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { HProd } from '../models/HProd';
 import { ConnectingToDatabaseService } from "../services/connecting-to-database.service";
 import { AlertService } from "../services/alert.service";
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

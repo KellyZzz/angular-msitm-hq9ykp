@@ -21,8 +21,6 @@ export class HardwareListComponent implements OnInit {
   color;
   base64Image: any;
   public HProducts: Array<any> = [];
-  
-  
 
   constructor(
     

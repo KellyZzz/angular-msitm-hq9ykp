@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConnectingToDatabaseService } from '../services/connecting-to-database.service';
-import { HProd } from '../models/HProd';
+import { SProd } from '../models/SProd';
 import { products } from '../products';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-software-list',
@@ -13,15 +16,18 @@ import { products } from '../products';
 export class SoftwareListComponent implements OnInit {
   color;
   product;
-  public HProducts: Array<any> = [];
+  public SProducts: Array<any> = [];
 
-    constructor(private _dbService: ConnectingToDatabaseService) { }
+  constructor(
+    private _dbService: ConnectingToDatabaseService,
+    private _http: HttpClient,
+    private route: ActivatedRoute) { }
 
   public getSoftData() {
     this._dbService.getSoftData()
       .subscribe(
         (response: any) => {
-          this.HProducts = response.json();
+          this.SProducts = response.json();
         },
         (error: Error) => {
           throw error;
@@ -39,10 +45,10 @@ export class SoftwareListComponent implements OnInit {
     this.getSoftData();
   }
 
-    editHProduct(editHProductInfo) {
-    this.model2.name = this.HProducts[editHProductInfo].HardwareID;
-    this.model2.position = this.HProducts[editHProductInfo].Product_Name;
-    this.myValue = editHProductInfo;
+  editSProduct(editSProductInfo) {
+    this.model2.name = this.SProducts[editSProductInfo].SoftwareID;
+    this.model2.position = this.SProducts[editSProductInfo].Product_Name;
+    this.myValue = editSProductInfo;
   }
 
   changeColorOne() {
@@ -58,6 +64,5 @@ export class SoftwareListComponent implements OnInit {
   model2: any = {}; 
   myValue;
   
-
 }
 

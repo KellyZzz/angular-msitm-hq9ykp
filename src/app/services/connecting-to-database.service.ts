@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { HProd } from '../models/HProd';
+import { SProd } from '../models/SProd';
 import { User } from '../models/User';
  
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -18,7 +19,7 @@ export class ConnectingToDatabaseService {
 
   public getData(api?: string, page?: string) {
     if (!api) {
-        api = `http://localhost:3000/api/HardwareProduct?_p=`
+        api = `http://localhost:3000/api/HardwareProduct?_size=100`
     } 
     var n_api = api + page;
     return this._http.get(n_api);
@@ -31,6 +32,13 @@ export class ConnectingToDatabaseService {
     return this._http.get(url);
   }
 
+  public putData(api?: string, hprod?: HProd) {
+      if (!api) {
+          api = `http://localhost:3000/api/HardwareProduct`
+      } 
+      return this._http.post(api, hprod);
+  }
+
   public getSoftData(api?: string) {
     if (!api) {
         api = `http://localhost:3000/api/SoftwareProduct?_size=100`
@@ -38,19 +46,12 @@ export class ConnectingToDatabaseService {
     return this._http.get(api);
   }
 
-  public putData(api?: string, hprod?: HProd) {
-      if (!api) {
-          api = `http://localhost:3000/api/HardwareProduct`
-      } 
-      return this._http.post(api, hprod);
-    }
-
-    public putSoftData(api?: string, hprod?: HProd) {
-      if (!api) {
-          api = `http://localhost:3000/api/SoftwareProduct`
-      } 
-      return this._http.post(api, hprod);
-    }
+  public putSoftData(api?: string, hprod?: HProd) {
+    if (!api) {
+        api = `http://localhost:3000/api/SoftwareProduct`
+    } 
+    return this._http.post(api, hprod);
+  }
 
   public putUserData(api?: string, user?: User) {
       if (!api) {
