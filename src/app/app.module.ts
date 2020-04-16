@@ -9,8 +9,9 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { HardwareListComponent } from './hardware-list/hardware-list.component';
 import { SoftwareListComponent } from './software-list/software-list.component';
 import { HCrudComponent } from './h-crud/h-crud.component';
-import { SCrudComponent } from './s-crud/s-crud.component';
 import { HProdDetailComponent } from './h-details/h-details.component';
+import { SCrudComponent } from './s-crud/s-crud.component';
+import { SProdDetailComponent } from './s-details/s-details.component';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -33,10 +34,11 @@ import { RegisterComponent } from './register/register.component';
       { path: 'products/0', component: HardwareListComponent },
       { path: 'products/1', component: SoftwareListComponent },
       { path: 'products/2', component: HCrudComponent },
-      { path: 'hEdit', component: HCrudComponent },
+      // { path: 'hEdit', component: HCrudComponent },
       { path: 'Edit/0', component: HCrudComponent },
       { path: 'hProd/:id', component: HProdDetailComponent },
       { path: 'Edit/1', component: SCrudComponent },
+      { path: 'sProd/:id', component: SProdDetailComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent }
 
@@ -51,6 +53,7 @@ import { RegisterComponent } from './register/register.component';
     HCrudComponent,
     HProdDetailComponent,
     SCrudComponent,
+    SProdDetailComponent,
     LoginComponent,
     RegisterComponent
   ],

@@ -53,6 +53,13 @@ export class ConnectingToDatabaseService {
     return this._http.post(api, hprod);
   }
 
+  private SprodUrl = `http://localhost:3000/api/SoftwareProduct`;  // URL to web api
+
+  public getSProd(id?: string) {
+    const url = `${this.SprodUrl}/${id}`;
+    return this._http.get(url);
+  }
+
   public putUserData(api?: string, user?: User) {
       if (!api) {
           api = `http://localhost:3000/api/Users`

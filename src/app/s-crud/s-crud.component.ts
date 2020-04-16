@@ -8,7 +8,7 @@ import { first } from 'rxjs/operators';
 
 
 @Component({
-  selector: "app-h-crud",
+  selector: "app-s-crud",
   templateUrl: "./s-crud.component.html",
   styleUrls: ["./s-crud.component.css"],
   providers: [ ConnectingToDatabaseService, AlertService ]
