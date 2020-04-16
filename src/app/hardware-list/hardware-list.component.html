@@ -1,9 +1,9 @@
 <div class="tableWrapper">
 <div class="containerTitle">
   <div class="oneTitle"> ProductID </div>
-  <div class="twoTitle"> Name </div>
+  <div class="twoTitle"> Product Name </div>
   <!-- <div class="threeTitle"> Image </div> -->
-  <div class="eightTitle">Additional Details</div>
+  <div class="threeTitle"> Product Details </div>
 </div>
 <div class="containerListItems" *ngFor="let HProduct of HProducts; let i = index" [style.background-color]="changeColorOne()">
 
@@ -21,7 +21,7 @@
       </form>
   </div> -->
   
-  <div class="eight">
+  <div class="three">
     <button (click)="editHProduct(i)" [routerLink]="['/hProd', HProduct.HardwareID]" > Details </button>
   </div>
 

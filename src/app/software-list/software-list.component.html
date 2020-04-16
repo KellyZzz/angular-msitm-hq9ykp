@@ -5,11 +5,11 @@
   <div class="threeTitle">Product Details</div>
 </div>
 
-<div class="containerListItems" *ngFor="let HProduct of HProducts; let i = index" [style.background-color]="changeColorOne()">
-  <div class="one">{{HProduct.SoftwareID}}</div>
-  <div class="two">{{HProduct.Product_Name}}</div>
+<div class="containerListItems" *ngFor="let SProduct of SProducts; let i = index" [style.background-color]="changeColorOne()">
+  <div class="one">{{SProduct.SoftwareID}}</div>
+  <div class="two">{{SProduct.Product_Name}}</div>
   <div class="three">
-    <button [routerLink]="['/sProd', HProduct.SoftwareID]" > Details </button>
+    <button [routerLink]="['/sProd', SProduct.SoftwareID]" > Details </button>
   </div>
 
 
