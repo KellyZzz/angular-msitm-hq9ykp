@@ -61,6 +61,12 @@
   border-top-left-radius:10px;
 }
 
+.flex-box {
+  padding: 5px;
+  display:flex;
+  justify-content: flex-end;
+}
+
 
 .oneTitle {
   flex:1;

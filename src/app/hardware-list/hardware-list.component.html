@@ -1,11 +1,17 @@
-<div class="tableWrapper">
-<div class="containerTitle">
-  <div class="oneTitle"> ProductID </div>
-  <div class="twoTitle"> Product Name </div>
-  <!-- <div class="threeTitle"> Image </div> -->
-  <div class="threeTitle"> Product Details </div>
-</div>
-<div class="containerListItems" *ngFor="let HProduct of HProducts; let i = index" [style.background-color]="changeColorOne()">
+<div class="tableWrapper" >
+
+  <div class="flex-box">
+    <button>Back</button>
+  </div>
+
+  <div class="containerTitle">
+    <div class="oneTitle"> ProductID </div>
+    <div class="twoTitle"> Product Name </div>
+    <!-- <div class="threeTitle"> Image </div> -->
+    <div class="threeTitle"> Product Details </div>
+  </div>
+
+  <div class="containerListItems" *ngFor="let HProduct of HProducts; let i = index" [style.background-color]="changeColorOne()">
 
   <div class="one">{{HProduct.HardwareID}}</div>
   <div class="two">{{HProduct.Product_Name}}</div>
@@ -24,6 +30,8 @@
   <div class="three">
     <button (click)="editHProduct(i)" [routerLink]="['/hProd', HProduct.HardwareID]" > Details </button>
   </div>
+
+</div>
 
 <!-- </div>
 <button [routerLink]="['/Edit0']" > Add New Product </button>
