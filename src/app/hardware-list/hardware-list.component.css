@@ -67,6 +67,9 @@
   justify-content: flex-end;
 }
 
+button {
+  margin:10px
+}
 
 .oneTitle {
   flex:1;

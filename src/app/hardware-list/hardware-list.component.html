@@ -33,7 +33,8 @@
 
 </div>
 
-<!-- </div>
-<button [routerLink]="['/Edit0']" > Add New Product </button>
-</div> -->
+<div>
+    <button  (click)="decCount()" (click) = "this.getData(this.pager.toString())" class="btn btn-default form-control increaseBtn">Previous</button>
+    <button  (click)="incCount()" (click) = "this.getData(this.pager.toString())"  class="btn btn-default form-control increaseBtn">Next</button>
 
+<div>

@@ -17,15 +17,15 @@ export class ConnectingToDatabaseService {
     this._http = http;
   }
 
-  public getData(api?: string, page?: string) {
-    if (!api) {
-        api = `http://localhost:3000/api/HardwareProduct?_size=100`
-    } 
-    var n_api = api + page;
-    return this._http.get(n_api);
-  }
 
   private HprodUrl = `http://localhost:3000/api/HardwareProduct`;  // URL to web api
+  private SprodUrl = `http://localhost:3000/api/SoftwareProduct`;  // URL to web api
+
+
+  public getData(page?: string) {
+    const url = `${this.HprodUrl}?_p=${page}&_size=10`;
+    return this._http.get(url);
+  }
 
   public getHProd(id?: string) {
     const url = `${this.HprodUrl}/${id}`;
@@ -37,13 +37,15 @@ export class ConnectingToDatabaseService {
           api = `http://localhost:3000/api/HardwareProduct`
       } 
       return this._http.post(api, hprod);
-  }
+    }
 
-  public getSoftData(api?: string) {
-    if (!api) {
-        api = `http://localhost:3000/api/SoftwareProduct?_size=100`
-    } 
-    return this._http.get(api);
+  public getSoftData(page?: string) {
+    const url = `${this.SprodUrl}?_p=${page}&_size=10`;
+    return this._http.get(url);
+  }
+  public getSProd(id?: string) {
+    const url = `${this.SprodUrl}/${id}`;
+    return this._http.get(url);
   }
 
   public putSoftData(api?: string, hprod?: HProd) {
@@ -53,12 +55,6 @@ export class ConnectingToDatabaseService {
     return this._http.post(api, hprod);
   }
 
-  private SprodUrl = `http://localhost:3000/api/SoftwareProduct`;  // URL to web api
-
-  public getSProd(id?: string) {
-    const url = `${this.SprodUrl}/${id}`;
-    return this._http.get(url);
-  }
 
   public putUserData(api?: string, user?: User) {
       if (!api) {

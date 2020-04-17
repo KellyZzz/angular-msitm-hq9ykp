@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConnectingToDatabaseService } from '../services/connecting-to-database.service';
 import { SProd } from '../models/SProd';
@@ -14,6 +14,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   providers: [ ConnectingToDatabaseService ]
 })
 export class SoftwareListComponent implements OnInit {
+  pager = 0;
   color;
   product;
   public SProducts: Array<any> = [];
@@ -23,8 +24,23 @@ export class SoftwareListComponent implements OnInit {
     private _http: HttpClient,
     private route: ActivatedRoute) { }
 
-  public getSoftData() {
-    this._dbService.getSoftData()
+  public SgetCount() {
+    return JSON.parse(JSON.stringify(this.pager))
+    console.log(JSON.parse(JSON.stringify(this.pager)))
+  }
+  public SincCount(){
+    this.pager = this.pager+1;
+    console.log(this.pager)
+  }
+  public SdecCount(){
+    this.pager = this.pager-1;
+    console.log(this.pager)
+  }
+
+  public getSoftData(page?: string) {
+    this.SProducts = [];
+
+    this._dbService.getSoftData(page)
       .subscribe(
         (response: any) => {
           this.SProducts = response.json();
@@ -42,7 +58,11 @@ export class SoftwareListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getSoftData();
+    this.getSoftData(this.pager.toString());
+  }
+
+  ngOnChanges(changes : SimpleChanges) {
+    this.getSoftData(this.pager.toString());
   }
 
   editSProduct(editSProductInfo) {

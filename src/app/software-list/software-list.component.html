@@ -1,4 +1,9 @@
 <div class="tableWrapper">
+  
+  <div class="flex-box">
+    <button [routerLink]="['/products']"> Back </button>
+  </div>
+
 <div class="containerTitle">
   <div class="oneTitle">Software</div>
   <div class="twoTitle">Product Name</div>
@@ -11,5 +16,11 @@
   <div class="three">
     <button [routerLink]="['/sProd', SProduct.SoftwareID]" > Details </button>
   </div>
+</div>
+
+<div>
+    <button  (click)="SdecCount()" (click) = "this.getSoftData(this.pager.toString())" class="btn btn-default form-control increaseBtn">Previous</button>
+    <button  (click)="SincCount()" (click) = "this.getSoftData(this.pager.toString())"  class="btn btn-default form-control increaseBtn">Next</button>
+<div>
 
 

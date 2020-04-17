@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConnectingToDatabaseService } from '../services/connecting-to-database.service';
 import { HProd } from '../models/HProd';
@@ -16,7 +16,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 
 export class HardwareListComponent implements OnInit {
-  pager = {};
+  pager = 0;
   product;
   color;
   base64Image: any;
@@ -27,6 +27,19 @@ export class HardwareListComponent implements OnInit {
   private _dbService: ConnectingToDatabaseService,
   private _http: HttpClient,
   private route: ActivatedRoute) { }
+
+  public getCount() {
+    return JSON.parse(JSON.stringify(this.pager))
+    console.log(JSON.parse(JSON.stringify(this.pager)))
+  }
+  public incCount(){
+    this.pager = this.pager+1;
+    console.log(this.pager)
+  }
+  public decCount(){
+    this.pager = this.pager-1;
+    console.log(this.pager)
+  }
 
   public getData(page?: string) {
     this._dbService.getData(page)
@@ -59,7 +72,7 @@ export class HardwareListComponent implements OnInit {
     }
 
   ngOnInit() {
-    this.getData();
+    this.getData(this.pager.toString());
     // this.route.queryParams.subscribe(response => this.loadPage('1'));
 
     //  leave it here for rn, let's try in detail first since you already set up by each specific products in detail page.
@@ -70,6 +83,10 @@ export class HardwareListComponent implements OnInit {
       this.base64Image = 'data:image/jpg;base64,' + base64data;
     });
 
+  }
+  
+  ngOnChanges(changes : SimpleChanges) {
+    this.getData(this.pager.toString());
   }
 
   changeColorOne() {

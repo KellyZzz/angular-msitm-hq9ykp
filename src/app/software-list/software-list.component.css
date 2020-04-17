@@ -61,6 +61,16 @@
   border-top-left-radius:10px;
 }
 
+.flex-box {
+  padding: 5px;
+  display:flex;
+  justify-content: flex-end;
+}
+
+button {
+  margin:10px
+}
+
 
 .oneTitle {
   flex:1;
