@@ -44,6 +44,18 @@ export class SProdDetailComponent implements OnInit {
         );
   }
 
+  public delSProd(id?: string) {
+    this.sProdService.delSProd(id)
+      .subscribe(
+          (response: any) => {
+            this.SProducts = response.json();
+          },
+          (error: Error) => {
+            throw error;
+          }
+        );
+  }
+
   ngOnInit() {
    this.getSProd(this.route.snapshot.params.id);
    this.imageForm = this.formBuilder.group({});

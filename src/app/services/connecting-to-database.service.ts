@@ -31,6 +31,11 @@ export class ConnectingToDatabaseService {
     const url = `${this.HprodUrl}/${id}`;
     return this._http.get(url);
   }
+  
+  public delHProd(id?: string) {
+    const url = `${this.HprodUrl}/${id}`;
+    return this._http.delete(url);
+  }
 
   public putData(api?: string, hprod?: HProd) {
       if (!api) {
@@ -46,6 +51,11 @@ export class ConnectingToDatabaseService {
   public getSProd(id?: string) {
     const url = `${this.SprodUrl}/${id}`;
     return this._http.get(url);
+  }
+
+  public delSProd(id?: string) {
+    const url = `${this.SprodUrl}/${id}`;
+    return this._http.delete(url);
   }
 
   public putSoftData(api?: string, hprod?: HProd) {

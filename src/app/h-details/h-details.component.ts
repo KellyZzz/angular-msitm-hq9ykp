@@ -43,6 +43,18 @@ export class HProdDetailComponent implements OnInit {
           }
         );
   }
+  
+  public delHProd(id?: string) {
+    this.hProdService.delHProd(id)
+      .subscribe(
+          (response: any) => {
+            this.HProducts = response.json();
+          },
+          (error: Error) => {
+            throw error;
+          }
+        );
+  }
 
   ngOnInit() {
    this.getHProd(this.route.snapshot.params.id);
