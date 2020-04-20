@@ -12,3 +12,5 @@ label {
 input {
   margin:10px
 }
+
+#copy {  position: relative; left: 450px }
