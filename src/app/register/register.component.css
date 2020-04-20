@@ -3,18 +3,17 @@ button {
   margin:5px
 }
 
-/* could move the title of each input box */
-label {
-  margin:5px
-}
+.jumbotron {
+		text-shadow: #FFF 0 1px 1px;
+		color: #FFF;
+		position: relative;
+    width: 60vh;
+		height: 80vh;
+    /* left: 40%; */
+    margin-top: -20%
+	}
 
-/* could move the input box */
-input {
-  margin:10px
-}
-
-select {
-  margin:10px
-}
-
-#copy {  position: relative; left: 450px }
+.jumbotron .container-fluid {
+		position: relative;
+		z-index: 2;
+	}
