@@ -29,6 +29,7 @@ export class HCrudComponent implements OnInit {
   ngOnInit() {
     this.HProdForm = this.formBuilder.group({
             Product_Name: ['', Validators.required],
+            Short_Description: ['', Validators.required],
             Long_Description: ['', Validators.required],
             SKU: ['', [Validators.required, Validators.minLength(6)]],Tax_Category: ['', Validators.required],
             Gift_Wrappable: ['', Validators.required],

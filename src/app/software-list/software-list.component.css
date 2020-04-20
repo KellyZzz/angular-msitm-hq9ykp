@@ -163,42 +163,6 @@ button {
   color:#ffffff;
 }
 
-.five {
-  flex:1;
-  padding:10px;
-}
-
-.fiveTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
-.six {
-  flex:1;
-  padding:10px;
-}
-
-.sixTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
-.seven {
-  flex:1;
-  padding:10px;
-}
-
-.sevenTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
 .containerListItems {
   display:flex;
 }
