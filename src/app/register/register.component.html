@@ -10,24 +10,24 @@
     <div class="container-fluid">
       <h3 id="copy">Sign Up for a New Account</h3>
       <br>
-      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <form  [formGroup]="registerForm" (ngSubmit)="onSubmit()" ngNativeValidate>
           <div class="form-group" id="copy">
               <label for="FirstName">First Name</label>
-              <input type="text" formControlName="FirstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }" />
+              <input type="text" formControlName="FirstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.FirstName.errors }" required/>
               <div *ngIf="submitted && f.FirstName.errors" class="invalid-feedback">
                   <div *ngIf="f.FirstName.errors.required">First Name is required</div>
               </div>
           </div>
           <div class="form-group" id="copy">
               <label for="LastName">Last Name</label>
-              <input type="text" formControlName="LastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }" />
+              <input type="text" formControlName="LastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.LastName.errors }" required/>
               <div *ngIf="submitted && f.LastName.errors" class="invalid-feedback">
                   <div *ngIf="f.LastName.errors.required">Last Name is required</div>
               </div>
           </div>
           <div class="form-group" id="copy">
               <label for="UserName">Username</label>
-              <input type="text" formControlName="UserName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }" />
+              <input type="text" formControlName="UserName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }" required/>
               <div *ngIf="submitted && f.UserName.errors" class="invalid-feedback">
                   <div *ngIf="f.UserName.errors.required">Username is required</div>
               </div>
@@ -45,14 +45,14 @@
           </div>
           <div class="form-group" id="copy">
               <label for="Email">Email</label>
-              <input type="Email" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" />
+              <input type="Email" formControlName="Email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Email.errors }" required/>
               <div *ngIf="submitted && f.Email.errors" class="invalid-feedback">
                   <div *ngIf="f.Email.errors.required">Email is required</div>
               </div>
           </div>
           <div class="form-group" id="copy">
               <label for="Password">Password</label>
-              <input type="Password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" />
+              <input type="Password" formControlName="Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.Password.errors }" required/>
               <div *ngIf="submitted && f.Password.errors" class="invalid-feedback">
                   <div *ngIf="f.Password.errors.required">Password is required</div>
                   <!-- <div *ngIf="f.Password.errors.minlength">Password must be at least 6 characters</div> -->

@@ -14,7 +14,7 @@
       <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()" ngNativeValidate>
         <div class="form-group">
             <label for="UserName">Username</label>
-            <input type="text" formControlName="UserName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }" />
+            <input type="text" formControlName="UserName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.UserName.errors }" required/>
             <div *ngIf="submitted && f.UserName.errors" class="invalid-feedback">
                 <div *ngIf="f.UserName.errors.required">Username is required</div>
             </div>
