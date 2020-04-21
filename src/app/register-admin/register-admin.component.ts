@@ -1,8 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit,SimpleChanges } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ConnectingToDatabaseService } from "../services/connecting-to-database.service";
 import { AlertService } from "../services/alert.service";
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 
@@ -13,52 +12,52 @@ import { first } from 'rxjs/operators';
   providers: [ ConnectingToDatabaseService, AlertService ]
 })
 export class RegisterAdminComponent implements OnInit {
-  registerForm: FormGroup;
+  searchText;
   loading = false;
   submitted = false;
+  public Users: Array<any> = [];
+  pager =0;
   color;
 
   constructor(
   private _dbService: ConnectingToDatabaseService,
-  private formBuilder: FormBuilder,
   private route: ActivatedRoute,
   private router: Router,
   private alertService: AlertService) {}
 
-  ngOnInit() {
-    this.registerForm = this.formBuilder.group({
-            UserName: ['', Validators.required],
-            UserRole: ['', Validators.required],
-            FirstName: ['', Validators.required],
-            LastName: ['', Validators.required],
-            Email: ['', Validators.required],
-            Password: ['', Validators.required]
-        });
+   public getCount() {
+    return JSON.parse(JSON.stringify(this.pager))
+    console.log(JSON.parse(JSON.stringify(this.pager)))
   }
-  get f() { return this.registerForm.controls; }
+  public incCount(){
+    this.pager = this.pager+1;
+    console.log(this.pager)
+  }
+  public decCount(){
+    this.pager = this.pager-1;
+    console.log(this.pager)
+  }
 
-  onSubmit() {
-    this.submitted = true;
-    this.alertService.clear();
-
-    // if (this.HProdForm.invalid) {
-    //         window.alert('This Form is invalid!');
-    //     }
-    this.loading = true;
-
-    this._dbService.putUserData('http://localhost:3000/api/Users',this.registerForm.value)
-    .pipe(first())
+  public getUserPage(page?: string) {
+    this._dbService.getUserPage(page)
       .subscribe(
-          data => {
-              this.alertService.success('Registration successful', true);
-              this.router.navigate(['/'])
-              
-          },
-          error => {
-              this.alertService.error(error);
-              this.loading = false;
-              this.router.navigate([''])
-          });
+        (response: any) => {
+          this.Users = response.json();
+        },
+        (error: Error) => {
+          throw error;
+        }
+      )
+  }
+
+  ngOnInit() {
+        this.getUserPage(this.pager.toString());
+        
+
+  };
+  
+  ngOnChanges(changes : SimpleChanges) {
+    this.getUserPage(this.pager.toString());
   }
 
   changeColorOne() {

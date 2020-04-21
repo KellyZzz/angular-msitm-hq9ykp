@@ -7,8 +7,7 @@
     <p *ngIf="product.description"> Description: {{ product.description }} </p>
     <button class="btn btn-primary" a [title]="product.name + ' details'" [routerLink]="['/products', productId]"> View all  {{ product.name }} products
       <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-    </button> or
-    <button class="btn btn-primary" [routerLink]="['/Edit', productId]" > Add New {{ product.name }} Product </button>
+    </button>
   </div>
 
 </div> 

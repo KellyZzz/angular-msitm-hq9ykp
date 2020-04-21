@@ -34,9 +34,6 @@
     <div class="Cell">
       <p>Image</p>
     </div>
-    <div class="Cell">
-      <p>Delete Product</p>
-    </div>
   </div>
 
   <div class="Row">
@@ -67,9 +64,5 @@
     <div class="Cell">
       <img src={{HProduct.Image_URL}} style="width:100px;height:75px;"/>
     </div>
-    <div class="Cell">
-      <button (click)="delHProd(HProduct.HardwareID)" [routerLink]="['/products/0']" class="btn btn-default form-control increaseBtn">Delete</button>
-  </div>
-
   </div>
 </div>

@@ -21,7 +21,13 @@ export class ConnectingToDatabaseService {
   private HprodUrl = `http://localhost:3000/api/HardwareProduct`;  // URL to web api
   private SprodUrl = `http://localhost:3000/api/SoftwareProduct`;  // URL to web api
 
+  private Userurl = `http://localhost:3000/api/Users`;  // URL to web api
 
+
+  public getUserPage(page?: string) {
+    const url = `${this.Userurl}?_p=${page}&_size=10`;
+    return this._http.get(url);
+  }
   public getData(page?: string) {
     const url = `${this.HprodUrl}?_p=${page}&_size=10`;
     return this._http.get(url);
