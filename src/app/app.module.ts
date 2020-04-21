@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
+import { ProductListUserComponent } from './product-list-user/product-list-user.component';
 import { HardwareListComponent } from './hardware-list/hardware-list.component';
 import { SoftwareListComponent } from './software-list/software-list.component';
 import { HCrudComponent } from './h-crud/h-crud.component';
@@ -33,6 +34,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       { path: '', component: LoginComponent },
       // { path: '', component: ProductListComponent },
       { path: 'products', component: ProductListComponent },
+      { path: 'products/user', component: ProductListUserComponent },
       { path: 'products/0', component: HardwareListComponent },
       { path: 'products/1', component: SoftwareListComponent },
       { path: 'products/2', component: HCrudComponent },
@@ -50,6 +52,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     AppComponent,
     TopBarComponent,
     ProductListComponent,
+    ProductListUserComponent,
     HardwareListComponent,
     SoftwareListComponent,
     HCrudComponent,
