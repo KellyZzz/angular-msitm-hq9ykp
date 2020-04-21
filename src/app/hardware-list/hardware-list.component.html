@@ -5,7 +5,7 @@
   </div>
 
   <div class="search-hero">
-    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Type a Product Name">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;Type a Product Name">
   </div>
 
   <table class="tableWrapper">
@@ -26,6 +26,15 @@
     </tr>
   </tbody>
  </table>
+
+  <div>
+      <button  (click)="decCount()" (click) = "this.getData(this.pager.toString())" class="btn btn-default form-control increaseBtn">Previous</button>
+      <button  (click)="incCount()" (click) = "this.getData(this.pager.toString())"  class="btn btn-default form-control increaseBtn">Next</button>
+  </div>
+
+</div>
+
+
 
   <!-- <div class="containerTitle">
     <div class="oneTitle"> ProductID </div>
@@ -54,10 +63,3 @@
   <!-- <div class="four">
     <button (click)="editHProduct(i)" [routerLink]="['/hProd', HProduct.HardwareID]" > Details </button>
   </div> -->
-
-</div>
-
-<div>
-    <button  (click)="decCount()" (click) = "this.getData(this.pager.toString())" class="btn btn-default form-control increaseBtn">Previous</button>
-    <button  (click)="incCount()" (click) = "this.getData(this.pager.toString())"  class="btn btn-default form-control increaseBtn">Next</button>
-<div>

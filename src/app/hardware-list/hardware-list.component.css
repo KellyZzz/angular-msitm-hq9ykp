@@ -63,7 +63,7 @@
 
 .flex-box {
   padding: 5px;
-  display:flex;
+  display: flex;
   justify-content: flex-end;
 }
 
@@ -174,9 +174,12 @@ button {
 }
 
 .search-hero {
-  max-width: 500px;
+  /* padding: 15px 0 75px;
+  max-width: 1500px;
   padding-bottom: 50px;
-  margin:auto;
+  margin:auto; */
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .pointer{
