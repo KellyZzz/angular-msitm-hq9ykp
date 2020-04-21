@@ -27,6 +27,11 @@
   background:#f6f6f6;
 }
 
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
 .addNewEmployeeBtn {
   width:30px;
   height:30px;

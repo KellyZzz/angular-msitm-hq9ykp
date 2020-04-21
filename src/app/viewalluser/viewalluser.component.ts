@@ -52,8 +52,6 @@ export class ViewAllUserComponent implements OnInit {
 
   ngOnInit() {
         this.getUserPage(this.pager.toString());
-        
-
   };
   
   ngOnChanges(changes : SimpleChanges) {
