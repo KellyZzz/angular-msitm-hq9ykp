@@ -8,13 +8,13 @@ import { ConnectingToDatabaseService } from "../services/connecting-to-database.
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-h-details-user',
-  templateUrl: './h-details-user.component.html',
-  styleUrls: [ './h-details-user.component.css' ],
+  selector: 'app-h-details-admin',
+  templateUrl: './h-details-admin.component.html',
+  styleUrls: [ './h-details-admin.component.css' ],
   providers: [ ConnectingToDatabaseService ]
 })
 
-export class HProdDetailUserComponent implements OnInit {
+export class HProdDetailAdminComponent implements OnInit {
   public HProducts: Array<any> = [];
   private sub: any;
   imageForm: FormGroup;

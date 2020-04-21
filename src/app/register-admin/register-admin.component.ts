@@ -7,12 +7,12 @@ import { first } from 'rxjs/operators';
 
 
 @Component({
-  selector: "app-register-user",
-  templateUrl: "./register-user.component.html",
-  styleUrls: [ "./register-user.component.css" ],
+  selector: "app-register-admin",
+  templateUrl: "./register-admin.component.html",
+  styleUrls: [ "./register-admin.component.css" ],
   providers: [ ConnectingToDatabaseService, AlertService ]
 })
-export class RegisterUserComponent implements OnInit {
+export class RegisterAdminComponent implements OnInit {
   registerForm: FormGroup;
   loading = false;
   submitted = false;

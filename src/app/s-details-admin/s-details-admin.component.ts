@@ -8,13 +8,13 @@ import { ConnectingToDatabaseService } from "../services/connecting-to-database.
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-s-details-user',
-  templateUrl: './s-details-user.component.html',
-  styleUrls: [ './s-details-user.component.css' ],
+  selector: 'app-s-details-admin',
+  templateUrl: './s-details-admin.component.html',
+  styleUrls: [ './s-details-admin.component.css' ],
   providers: [ ConnectingToDatabaseService ]
 })
 
-export class SProdDetailUserComponent implements OnInit {
+export class SProdDetailAdminComponent implements OnInit {
   public SProducts: Array<any> = [];
   private sub: any;
   imageForm: FormGroup;

@@ -72,7 +72,15 @@ List_one: Array<any> =[];
 
   for (this.user in this.Users) {
      
-  if( this.username == this.Users[this.user]['UserName'] && this.password == this.Users[this.user]['Password'])
+  if( this.username == this.Users[this.user]['UserName'] && this.password == this.Users[this.user]['Password'] && this.Users[this.user]['UserRole']=='admin')
+  {
+  this.flag = 1
+    this.router.navigate(['/products/admin']);
+    console.log("Logged in Successfully ");
+  break;
+  }
+  else if (this.username == this.Users[this.user]['UserName'] && this.password == this.Users[this.user]['Password'] && this.Users[this.user]['UserRole']=='user'
+  )
   {
   this.flag = 1
     this.router.navigate(['/products']);

@@ -8,10 +8,6 @@ import { products } from '../products';
 })
 export class ProductListAdminComponent {
   products = products;
-
-  share() {
-    window.alert('The product has been shared!');
-  }
 }
 
 /*

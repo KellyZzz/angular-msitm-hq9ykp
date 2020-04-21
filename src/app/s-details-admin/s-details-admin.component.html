@@ -1,5 +1,5 @@
 <div class="flex-box">
-    <button [routerLink]="['/products/user/1']"> Back </button>
+    <button [routerLink]="['/products/admin/1']"> Back </button>
 </div>
 
 <div class="Table"  *ngFor="let SProduct of SProducts; let i = index" >
@@ -69,7 +69,7 @@
       <img src={{SProduct.Image_URL}} style="width:100px;height:75px;"/>
     </div>
     <div class="Cell">
-      <button (click)="delSProd(SProduct.SoftwareID)" [routerLink]="['/products/user/1']" class="btn btn-default form-control increaseBtn">Delete</button>
+      <button (click)="delSProd(SProduct.SoftwareID)" [routerLink]="['/products/admin/1']" class="btn btn-default form-control increaseBtn">Delete</button>
   </div>
 
   </div>

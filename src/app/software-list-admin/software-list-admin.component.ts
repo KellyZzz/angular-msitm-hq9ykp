@@ -8,12 +8,12 @@ import { Observable } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-software-list-user',
-  templateUrl: './software-list-user.component.html',
-  styleUrls: ['./software-list-user.component.css'],
+  selector: 'app-software-list-admin',
+  templateUrl: './software-list-admin.component.html',
+  styleUrls: ['./software-list-admin.component.css'],
   providers: [ ConnectingToDatabaseService ]
 })
-export class SoftwareListUserComponent implements OnInit {
+export class SoftwareListAdminComponent implements OnInit {
   searchText;
   pager = 0;
   color;
