@@ -168,9 +168,11 @@ button {
 }
 
 .search-hero {
-  max-width: 500px;
+  /* max-width: 500px;
   padding-bottom: 50px;
-  margin:auto;
+  margin:auto; */
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .pointer{

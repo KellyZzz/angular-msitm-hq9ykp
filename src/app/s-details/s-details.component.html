@@ -66,13 +66,7 @@
     </div>
 
     <div class="Cell">
-    <form [formGroup]="imageForm" (ngSubmit)="onSubmit_Image()">
-      <button [disabled]="loading" class="btn btn-primary" id="imagebutton">
-        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-            Show Image
-      </button>
-      <img [src]="base64Image" style="width:100px;height:75px;"/>
-    </form>
+      <img src={{SProduct.Image_URL}} style="width:100px;height:75px;"/>
     </div>
     <div class="Cell">
       <button (click)="delSProd(SProduct.SoftwareID)" [routerLink]="['/products/1']" class="btn btn-default form-control increaseBtn">Delete</button>

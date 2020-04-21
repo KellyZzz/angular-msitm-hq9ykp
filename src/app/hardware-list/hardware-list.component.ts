@@ -23,7 +23,6 @@ export class HardwareListComponent implements OnInit {
   isDesc: boolean = false;
   column: string = 'Product_Name';
   color;
-  base64Image: any;
   public HProducts: Array<any> = [];
 
   constructor(
@@ -57,23 +56,6 @@ export class HardwareListComponent implements OnInit {
       )
   }
 
-  // public LoadPage(api?: string,page?: string) {
-  //     api = `http://localhost:3000/api/HardwareProduct?_p=`
-  //     var n_api= api + page;
-  //   return this._http.get(n_api);
-  // }
-
-  private loadPage(page) {
-        // get page of items from api
-        this._http.get<any>(`http://localhost:3000/api/HardwareProduct?_p=${page}`).subscribe(
-        (response: any) => {
-          this.HProducts = response.json();
-        },
-        (error: Error) => {
-          throw error;
-        }
-      )
-    }
 
   ngOnInit() {
     this.getData(this.pager.toString());
@@ -100,36 +82,6 @@ export class HardwareListComponent implements OnInit {
      } else {
       return '#f6f6f6';
      }
-  }
-
-  getBase64ImageFromURL(url: string) {
-    return Observable.create((observer: Observer<string>) => {
-      let img = new Image();
-      img.crossOrigin = 'Anonymous';
-      img.src = url;
-      if (!img.complete) {
-        img.onload = () => {
-          observer.next(this.getBase64Image(img));
-          observer.complete();
-        };
-        img.onerror = (err) => {
-          observer.error(err);
-        };
-      } else {
-        observer.next(this.getBase64Image(img));
-        observer.complete();
-      }
-    });
-  }
-
-  getBase64Image(img: HTMLImageElement) {
-    var canvas = document.createElement("canvas");
-    canvas.width = img.width;
-    canvas.height = img.height;
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0);
-    var dataURL = canvas.toDataURL("image/png");
-    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
   }
 
   sort(property) {
