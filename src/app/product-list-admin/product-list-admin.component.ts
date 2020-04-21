@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { products } from '../products';
 
 @Component({
-  selector: 'app-product-list-user',
-  templateUrl: './product-list-user.component.html',
-  styleUrls: ['./product-list-user.component.css']
+  selector: 'app-product-list-admin',
+  templateUrl: './product-list-admin.component.html',
+  styleUrls: ['./product-list-admin.component.css']
 })
-export class ProductListUserComponent {
+export class ProductListAdminComponent {
   products = products;
 
   share() {

@@ -6,17 +6,17 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductListUserComponent } from './product-list-user/product-list-user.component';
+import { ProductListAdminComponent } from './product-list-admin/product-list-admin.component';
 import { HardwareListComponent } from './hardware-list/hardware-list.component';
-import { HardwareListUserComponent } from './hardware-list-user/hardware-list-user.component';
+import { HardwareListAdminComponent } from './hardware-list-admin/hardware-list-admin.component';
 import { SoftwareListComponent } from './software-list/software-list.component';
-import { SoftwareListUserComponent } from './software-list-user/software-list-user.component';
+import { SoftwareListAdminComponent } from './software-list-admin/software-list-admin.component';
 import { HCrudComponent } from './h-crud/h-crud.component';
 import { HProdDetailComponent } from './h-details/h-details.component';
-import { HProdDetailUserComponent } from './h-details-user/h-details-user.component';
+import { HProdDetailAdminComponent } from './h-details-admin/h-details-admin.component';
 import { SCrudComponent } from './s-crud/s-crud.component';
 import { SProdDetailComponent } from './s-details/s-details.component';
-import { SProdDetailUserComponent } from './s-details-user/s-details-user.component';
+import { SProdDetailAdminComponent } from './s-details-admin/s-details-admin.component';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -39,38 +39,38 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       { path: '', component: LoginComponent },
       // { path: '', component: ProductListComponent },
       { path: 'products', component: ProductListComponent },
-      { path: 'products/user', component: ProductListUserComponent },
+      { path: 'products/admin', component: ProductListAdminComponent },
       { path: 'products/0', component: HardwareListComponent },
-      { path: 'products/user/0', component: HardwareListUserComponent },
+      { path: 'products/admin/0', component: HardwareListAdminComponent },
       { path: 'products/1', component: SoftwareListComponent },
-      { path: 'products/user/1', component: SoftwareListUserComponent },
+      { path: 'products/admin/1', component: SoftwareListAdminComponent },
       { path: 'products/2', component: HCrudComponent },
       { path: 'Edit/0', component: HCrudComponent },
       { path: 'hProd/:id', component: HProdDetailComponent },
-      { path: 'hProd/user/:id', component: HProdDetailUserComponent },
+      { path: 'hProd/admin/:id', component: HProdDetailAdminComponent },
       { path: 'Edit/1', component: SCrudComponent },
       { path: 'sProd/:id', component: SProdDetailComponent },
-      { path: 'sProd/user/:id', component: SProdDetailUserComponent },
+      { path: 'sProd/admin/:id', component: SProdDetailAdminComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
-      { path: 'register/user', component: RegisterUserComponent }
+      { path: 'register/admin', component: RegisterUserComponent }
     ])
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
     ProductListComponent,
-    ProductListUserComponent,
+    ProductListAdminComponent,
     HardwareListComponent,
-    HardwareListUserComponent,
+    HardwareListAdminComponent,
     SoftwareListComponent,
-    SoftwareListUserComponent,
+    SoftwareListAdminComponent,
     HCrudComponent,
     HProdDetailComponent,
-    HProdDetailUserComponent,
+    HProdDetailAdminComponent,
     SCrudComponent,
     SProdDetailComponent,
-    SProdDetailUserComponent,
+    SProdDetailAdminComponent,
     LoginComponent,
     RegisterComponent,
     RegisterUserComponent

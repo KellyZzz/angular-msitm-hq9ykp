@@ -9,13 +9,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
-  selector: 'app-hardware-list-user',
-  templateUrl: './hardware-list-user.component.html',
-  styleUrls: ['./hardware-list-user.component.css'],
+  selector: 'app-hardware-list-admin',
+  templateUrl: './hardware-list-admin.component.html',
+  styleUrls: ['./hardware-list-admin.component.css'],
   providers: [ ConnectingToDatabaseService ]
 })
 
-export class HardwareListUserComponent implements OnInit {
+export class HardwareListAdminComponent implements OnInit {
   searchText;
   pager = 0;
   product;
