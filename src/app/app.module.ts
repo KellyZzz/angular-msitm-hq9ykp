@@ -13,8 +13,10 @@ import { SoftwareListComponent } from './software-list/software-list.component';
 import { SoftwareListUserComponent } from './software-list-user/software-list-user.component';
 import { HCrudComponent } from './h-crud/h-crud.component';
 import { HProdDetailComponent } from './h-details/h-details.component';
+import { HProdDetailUserComponent } from './h-details-user/h-details-user.component';
 import { SCrudComponent } from './s-crud/s-crud.component';
 import { SProdDetailComponent } from './s-details/s-details.component';
+import { SProdDetailUserComponent } from './s-details-user/s-details-user.component';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -22,6 +24,7 @@ import { ConnectingToDatabaseService } from './services/connecting-to-database.s
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RegisterUserComponent } from './register-user/register-user.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
@@ -42,14 +45,15 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       { path: 'products/1', component: SoftwareListComponent },
       { path: 'products/user/1', component: SoftwareListUserComponent },
       { path: 'products/2', component: HCrudComponent },
-      // { path: 'hEdit', component: HCrudComponent },
       { path: 'Edit/0', component: HCrudComponent },
       { path: 'hProd/:id', component: HProdDetailComponent },
+      { path: 'hProd/user/:id', component: HProdDetailUserComponent },
       { path: 'Edit/1', component: SCrudComponent },
       { path: 'sProd/:id', component: SProdDetailComponent },
+      { path: 'sProd/user/:id', component: SProdDetailUserComponent },
       { path: 'login', component: LoginComponent },
-      { path: 'register', component: RegisterComponent }
-
+      { path: 'register', component: RegisterComponent },
+      { path: 'register/user', component: RegisterUserComponent }
     ])
   ],
   declarations: [
@@ -63,10 +67,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     SoftwareListUserComponent,
     HCrudComponent,
     HProdDetailComponent,
+    HProdDetailUserComponent,
     SCrudComponent,
     SProdDetailComponent,
+    SProdDetailUserComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RegisterUserComponent
   ],
   bootstrap: [ AppComponent ]
 })

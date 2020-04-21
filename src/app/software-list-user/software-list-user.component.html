@@ -22,7 +22,7 @@
       <td class="pointer" (click)="sort('SoftwareID')">{{SProduct.SoftwareID}}</td>
       <td class="pointer" (click)="sort('Product_Name')" >{{SProduct.Product_Name}}</td>
       <td class="pointer" (click)="sort('Short_Description')">{{SProduct.Short_Description}}</td>
-      <td> <button (click)="editSProduct(i)" [routerLink]="['/sProd', SProduct.SoftwareID]" > Details </button> </td>
+      <td> <button (click)="editSProduct(i)" [routerLink]="['/sProd/user', SProduct.SoftwareID]" > Details </button> </td>
     </tr>
   </tbody>
  </table>
