@@ -6,12 +6,12 @@ import { first } from 'rxjs/operators';
 
 
 @Component({
-  selector: "app-register-admin",
-  templateUrl: "./register-admin.component.html",
-  styleUrls: [ "./register-admin.component.css" ],
+  selector: "app-viewalluser",
+  templateUrl: "./viewalluser.component.html",
+  styleUrls: [ "./viewalluser.component.css" ],
   providers: [ ConnectingToDatabaseService, AlertService ]
 })
-export class RegisterAdminComponent implements OnInit {
+export class ViewAllUserComponent implements OnInit {
   searchText;
   loading = false;
   submitted = false;

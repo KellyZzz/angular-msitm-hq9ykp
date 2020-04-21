@@ -24,7 +24,7 @@ import { ConnectingToDatabaseService } from './services/connecting-to-database.s
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { RegisterAdminComponent } from './register-admin/register-admin.component';
+import { ViewAllUserComponent } from './viewalluser/viewalluser.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
@@ -53,7 +53,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       { path: 'sProd/admin/:id', component: SProdDetailAdminComponent },
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
-      { path: 'register/admin', component: RegisterAdminComponent }
+      { path: 'alluser', component: ViewAllUserComponent }
     ])
   ],
   declarations: [
@@ -73,7 +73,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     SProdDetailAdminComponent,
     LoginComponent,
     RegisterComponent,
-    RegisterAdminComponent
+    ViewAllUserComponent
   ],
   bootstrap: [ AppComponent ]
 })
