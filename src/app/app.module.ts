@@ -19,6 +19,7 @@ import { ConnectingToDatabaseService } from './services/connecting-to-database.s
 
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { RegisterComponent } from './register/register.component';
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       // { path: '', component: ProductListComponent },

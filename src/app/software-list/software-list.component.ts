@@ -14,9 +14,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   providers: [ ConnectingToDatabaseService ]
 })
 export class SoftwareListComponent implements OnInit {
+  searchText;
   pager = 0;
   color;
   product;
+  records: Array<any>;
+  isDesc: boolean = false;
+  column: string = 'Product_Name';
   public SProducts: Array<any> = [];
 
   constructor(
@@ -79,6 +83,24 @@ export class SoftwareListComponent implements OnInit {
       return '#f6f6f6';
      }
   }
+
+  sort(property) {
+    this.isDesc = !this.isDesc; //change the direction    
+    this.column = property;
+    let direction = this.isDesc ? 1 : -1;
+
+    this.records.sort(function (a, b) {
+      if (a[property] < b[property]) {
+        return -1 * direction;
+      }
+      else if (a[property] > b[property]) {
+        return 1 * direction;
+      }
+      else {
+        return 0;
+      }
+    });
+  };
 
   model: any = {};
   model2: any = {}; 

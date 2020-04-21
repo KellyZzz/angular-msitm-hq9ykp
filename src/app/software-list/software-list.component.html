@@ -4,25 +4,35 @@
     <button [routerLink]="['/products']"> Back </button>
   </div>
 
-<div class="containerTitle">
-  <div class="oneTitle">Software</div>
-  <div class="twoTitle">Product Name</div>
-  <div class="threeTitle">Short Description</div>
-  <div class="fourTitle">Product Details</div>
-</div>
+  <div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Type a Product Name">
+  </div>
 
-<div class="containerListItems" *ngFor="let SProduct of SProducts; let i = index" [style.background-color]="changeColorOne()">
-  <div class="one">{{SProduct.SoftwareID}}</div>
-  <div class="two">{{SProduct.Product_Name}}</div>
-  <div class="two">{{SProduct.Short_Description}}</div>
-  <div class="four">
-    <button [routerLink]="['/sProd', SProduct.SoftwareID]" > Details </button>
+  <table class="tableWrapper">
+    <thead>
+      <tr>
+        <th>ProductID</th>
+        <th>Product Name</th>
+        <th>Short Description</th>
+        <th>Product Details </th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let SProduct of SProducts | filter:searchText">
+      <td class="pointer" (click)="sort('SoftwareID')">{{SProduct.SoftwareID}}</td>
+      <td class="pointer" (click)="sort('Product_Name')" >{{SProduct.Product_Name}}</td>
+      <td class="pointer" (click)="sort('Short_Description')">{{SProduct.Short_Description}}</td>
+      <td> <button (click)="editSProduct(i)" [routerLink]="['/sProd', SProduct.SoftwareID]" > Details </button> </td>
+    </tr>
+  </tbody>
+ </table>
+
+  <div>
+      <button  (click)="SdecCount()" (click) = "this.getSoftData(this.pager.toString())" class="btn btn-default form-control increaseBtn">Previous</button>
+      <button  (click)="SincCount()" (click) = "this.getSoftData(this.pager.toString())"  class="btn btn-default form-control increaseBtn">Next</button>
   </div>
+
 </div>
 
-<div>
-    <button  (click)="SdecCount()" (click) = "this.getSoftData(this.pager.toString())" class="btn btn-default form-control increaseBtn">Previous</button>
-    <button  (click)="SincCount()" (click) = "this.getSoftData(this.pager.toString())"  class="btn btn-default form-control increaseBtn">Next</button>
-<div>
 
 

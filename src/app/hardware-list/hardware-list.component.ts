@@ -16,8 +16,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 
 export class HardwareListComponent implements OnInit {
+  searchText;
   pager = 0;
   product;
+  records: Array<any>;
+  isDesc: boolean = false;
+  column: string = 'Product_Name';
   color;
   base64Image: any;
   public HProducts: Array<any> = [];
@@ -128,10 +132,26 @@ export class HardwareListComponent implements OnInit {
     return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
   }
 
+  sort(property) {
+    this.isDesc = !this.isDesc; //change the direction    
+    this.column = property;
+    let direction = this.isDesc ? 1 : -1;
+
+    this.records.sort(function (a, b) {
+      if (a[property] < b[property]) {
+        return -1 * direction;
+      }
+      else if (a[property] > b[property]) {
+        return 1 * direction;
+      }
+      else {
+        return 0;
+      }
+    });
+  };
+
   model: any = {};
   model2: any = {}; 
   myValue;
-  
-
 }
 

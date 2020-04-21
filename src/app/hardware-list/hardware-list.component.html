@@ -4,18 +4,41 @@
     <button [routerLink]="['/products']"> Back </button>
   </div>
 
-  <div class="containerTitle">
+  <div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Type a Product Name">
+  </div>
+
+  <table class="tableWrapper">
+    <thead>
+      <tr>
+        <th>ProductID</th>
+        <th>Product Name</th>
+        <th>Short Description</th>
+        <th>Product Details </th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let HProduct of HProducts | filter:searchText">
+      <td class="pointer" (click)="sort('HardwareID')">{{HProduct.HardwareID}}</td>
+      <td class="pointer" (click)="sort('Product_Name')" >{{HProduct.Product_Name}}</td>
+      <td class="pointer" (click)="sort('Short_Description')">{{HProduct.Short_Description}}</td>
+      <td> <button (click)="editHProduct(i)" [routerLink]="['/hProd', HProduct.HardwareID]" > Details </button> </td>
+    </tr>
+  </tbody>
+ </table>
+
+  <!-- <div class="containerTitle">
     <div class="oneTitle"> ProductID </div>
     <div class="twoTitle"> Product Name </div>
     <div class="threeTitle"> Short Description </div>
     <div class="fourTitle"> Product Details </div>
   </div>
 
-  <div class="containerListItems" *ngFor="let HProduct of HProducts; let i = index" [style.background-color]="changeColorOne()">
+  <div class="containerListItems" *ngFor="let HProduct of HProducts; let i = index" [style.background-color]="changeColorOne()"> -->
 
-  <div class="one">{{HProduct.HardwareID}}</div>
+  <!-- <div class="one">{{HProduct.HardwareID}}</div>
   <div class="two">{{HProduct.Product_Name}}</div>
-  <div class="three">{{HProduct.Short_Description}}</div>
+  <div class="three">{{HProduct.Short_Description}}</div> -->
 
   <!-- <div class="three">
       <form [formGroup]="imageForm" (ngSubmit)="onSubmit_Image()">
@@ -28,14 +51,13 @@
       </form>
   </div> -->
   
-  <div class="four">
+  <!-- <div class="four">
     <button (click)="editHProduct(i)" [routerLink]="['/hProd', HProduct.HardwareID]" > Details </button>
-  </div>
+  </div> -->
 
 </div>
 
 <div>
     <button  (click)="decCount()" (click) = "this.getData(this.pager.toString())" class="btn btn-default form-control increaseBtn">Previous</button>
     <button  (click)="incCount()" (click) = "this.getData(this.pager.toString())"  class="btn btn-default form-control increaseBtn">Next</button>
-
 <div>
