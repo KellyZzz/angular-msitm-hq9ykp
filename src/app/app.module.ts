@@ -8,7 +8,9 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductListUserComponent } from './product-list-user/product-list-user.component';
 import { HardwareListComponent } from './hardware-list/hardware-list.component';
+import { HardwareListUserComponent } from './hardware-list-user/hardware-list-user.component';
 import { SoftwareListComponent } from './software-list/software-list.component';
+import { SoftwareListUserComponent } from './software-list-user/software-list-user.component';
 import { HCrudComponent } from './h-crud/h-crud.component';
 import { HProdDetailComponent } from './h-details/h-details.component';
 import { SCrudComponent } from './s-crud/s-crud.component';
@@ -36,7 +38,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
       { path: 'products', component: ProductListComponent },
       { path: 'products/user', component: ProductListUserComponent },
       { path: 'products/0', component: HardwareListComponent },
+      { path: 'products/user/0', component: HardwareListUserComponent },
       { path: 'products/1', component: SoftwareListComponent },
+      { path: 'products/user/1', component: SoftwareListUserComponent },
       { path: 'products/2', component: HCrudComponent },
       // { path: 'hEdit', component: HCrudComponent },
       { path: 'Edit/0', component: HCrudComponent },
@@ -54,7 +58,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ProductListComponent,
     ProductListUserComponent,
     HardwareListComponent,
+    HardwareListUserComponent,
     SoftwareListComponent,
+    SoftwareListUserComponent,
     HCrudComponent,
     HProdDetailComponent,
     SCrudComponent,
