@@ -17,7 +17,6 @@ export class ConnectingToDatabaseService {
     this._http = http;
   }
 
-
   private HprodUrl = `http://localhost:3000/api/HardwareProduct`;  // URL to web api
   private SprodUrl = `http://localhost:3000/api/SoftwareProduct`;  // URL to web api
 
@@ -25,11 +24,11 @@ export class ConnectingToDatabaseService {
 
 
   public getUserPage(page?: string) {
-    const url = `${this.Userurl}?_p=${page}`;
+    const url = `${this.Userurl}?_p=${page}&_size=100`;
     return this._http.get(url);
   }
   public getData(page?: string) {
-    const url = `${this.HprodUrl}?_p=${page}`;
+    const url = `${this.HprodUrl}?_p=${page}&_size=100`;
     return this._http.get(url);
   }
 
@@ -51,7 +50,7 @@ export class ConnectingToDatabaseService {
     }
 
   public getSoftData(page?: string) {
-    const url = `${this.SprodUrl}?_p=${page}&_size=10`;
+    const url = `${this.SprodUrl}?_p=${page}&_size=100`;
     return this._http.get(url);
   }
   public getSProd(id?: string) {

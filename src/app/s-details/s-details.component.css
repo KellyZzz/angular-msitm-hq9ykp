@@ -131,89 +131,6 @@
   padding:0px 0px 20px 20px;
 }
 
-.two {
-  flex:1;
-  padding:10px;
-}
-
-.twoTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
-.three {
-  flex:1;
-  padding:10px;
-}
-
-.threeTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
-.four {
-  flex:1;
-  padding:10px;
-}
-
-.fourTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
-.five {
-  flex:1;
-  padding:10px;
-}
-
-.fiveTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
-.six {
-  flex:1;
-  padding:10px;
-}
-
-.sixTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
-.seven {
-  flex:1;
-  padding:10px;
-}
-
-.sevenTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
-
-.eight {
-  flex:1;
-  padding:10px;
-}
-
-.eightTitle {
-  flex:1;
-  padding:10px;
-  background:#444444;
-  color:#ffffff;
-}
 
 .containerListItems {
   display:flex;
@@ -221,33 +138,41 @@
 
     .Table
     {
-        display: table;
-       
+      display: table;
+      margin-top:20px;
+      padding:20px;
+      background:#f6f6f6;
+      table-layout: fixed;
     }
+      
     .Title
     {
-        display: table-caption;
-        text-align: center;
-        font-weight: bold;
-        font-size: larger;
+      display: table-caption;
+      text-align: center;
+      font-weight: bold;
+      font-size: 50px;
     }
+
     .Heading
     {
-        display: table-row;
-        font-weight: bold;
-        text-align: center;
+      display: table-row;
+      font-weight: bold;
+      text-align: center;
+      background-color: #C0C0C0;
+      color: white;
     }
     .Row
     {
-        display: table-row;
-        text-align: center;
+      display: table-row;
+      text-align: center;
     }
     .Cell
     {
-        display: table-cell;
-        border: solid;
-        border-width: thin;
-        padding-left: 5px;
-        padding-right: 5px;
+      display: table-cell;
+      border: solid;
+      border-width: thin;
+      padding-left: 5px;
+      padding-right: 5px;
+      width:500px; 
+      height:80px;
     }
-
