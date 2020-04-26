@@ -1,10 +1,9 @@
 <div class="tableWrapper" >
-  <div class="flex-box">
-    <button [routerLink]="['/products/admin']"> Back </button>
-  </div>
+
   <div class="search-hero">
-    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;Search by First Name">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search by UserName">
   </div>
+
   <table class="tableWrapper">
     <thead>
       <tr>
@@ -25,6 +24,15 @@
         <td> {{user.UserRole}} </td>
       </tr>
     </tbody>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
   </table>
+
+<div class="flex-box">
+  <button [routerLink]="['/products/admin']"> Back </button>
+</div>
+
+<div class="pagination">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>   
+
 </div>

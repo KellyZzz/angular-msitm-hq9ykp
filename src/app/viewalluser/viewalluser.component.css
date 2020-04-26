@@ -25,11 +25,19 @@
   margin-top:20px;
   padding:20px;
   background:#f6f6f6;
+  table-layout: fixed;
 }
 
-tr, th, td {
-  padding: 15px;
-  text-align: left;
+th {
+  background-color: #778899;
+  color: white;
+}
+
+td {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  width:500px; 
+  height:80px;
 }
 
 .addNewEmployeeBtn {
@@ -69,11 +77,12 @@ tr, th, td {
 .flex-box {
   padding: 5px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 button {
-  margin:10px
+  background-color: #778899;
+  margin:10px;
 }
 
 .oneTitle {
@@ -179,15 +188,26 @@ button {
 }
 
 .search-hero {
-  /* padding: 15px 0 75px;
-  max-width: 1500px;
-  padding-bottom: 50px;
-  margin:auto; */
-  display: table-cell;
-  vertical-align: middle;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.pagination {
+  font-size: 15px;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .pointer{
-    cursor: pointer;
+  cursor: pointer;
 }
 
