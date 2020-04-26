@@ -25,19 +25,6 @@ export class ViewAllUserComponent implements OnInit {
   private router: Router,
   private alertService: AlertService) {}
 
-   public getCount() {
-    return JSON.parse(JSON.stringify(this.pager))
-    console.log(JSON.parse(JSON.stringify(this.pager)))
-  }
-  public incCount(){
-    this.pager = this.pager+1;
-    console.log(this.pager)
-  }
-  public decCount(){
-    this.pager = this.pager-1;
-    console.log(this.pager)
-  }
-
   public getUserPage(page?: string) {
     this._dbService.getUserPage(page)
       .subscribe(
@@ -51,12 +38,9 @@ export class ViewAllUserComponent implements OnInit {
   }
 
   ngOnInit() {
-        this.getUserPage(this.pager.toString());
+    this.getUserPage();
   };
   
-  ngOnChanges(changes : SimpleChanges) {
-    this.getUserPage(this.pager.toString());
-  }
 
   changeColorOne() {
     this.color = !this.color;

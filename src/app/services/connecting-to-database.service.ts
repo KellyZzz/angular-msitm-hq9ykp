@@ -25,7 +25,7 @@ export class ConnectingToDatabaseService {
 
 
   public getUserPage(page?: string) {
-    const url = `${this.Userurl}?_p=${page}&_size=100`;
+    const url = `${this.Userurl}?_p=${page}`;
     return this._http.get(url);
   }
   public getData(page?: string) {

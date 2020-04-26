@@ -17,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of Users | filter:searchText">
+      <tr *ngFor="let user of Users | filter:searchText | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
         <td> {{user.UserName}} </td>
         <td> {{user.FirstName}} </td>
         <td> {{user.LastName}} </td>
@@ -25,9 +25,6 @@
         <td> {{user.UserRole}} </td>
       </tr>
     </tbody>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </table>
-  <div>
-      <button  (click)="decCount()" (click) = "this.getUserPage(this.pager.toString())" class="btn btn-default form-control increaseBtn">Previous</button>
-      <button  (click)="incCount()" (click) = "this.getUserPage(this.pager.toString())"  class="btn btn-default form-control increaseBtn">Next</button>
-  </div>
 </div>
