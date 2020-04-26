@@ -28,19 +28,6 @@ export class SoftwareListAdminComponent implements OnInit {
     private _http: HttpClient,
     private route: ActivatedRoute) { }
 
-  public SgetCount() {
-    return JSON.parse(JSON.stringify(this.pager))
-    console.log(JSON.parse(JSON.stringify(this.pager)))
-  }
-  public SincCount(){
-    this.pager = this.pager+1;
-    console.log(this.pager)
-  }
-  public SdecCount(){
-    this.pager = this.pager-1;
-    console.log(this.pager)
-  }
-
   public getSoftData(page?: string) {
     this.SProducts = [];
 
@@ -55,18 +42,8 @@ export class SoftwareListAdminComponent implements OnInit {
       )
   }
 
-  public toTitleCase(str: string): string {
-    return str.replace(/\w\S*/g, (txt: string): string => {
-      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-    });
-  }
-
   ngOnInit() {
-    this.getSoftData(this.pager.toString());
-  }
-
-  ngOnChanges(changes : SimpleChanges) {
-    this.getSoftData(this.pager.toString());
+    this.getSoftData();
   }
 
   editSProduct(editSProductInfo) {
@@ -83,24 +60,6 @@ export class SoftwareListAdminComponent implements OnInit {
       return '#f6f6f6';
      }
   }
-
-  sort(property) {
-    this.isDesc = !this.isDesc; //change the direction    
-    this.column = property;
-    let direction = this.isDesc ? 1 : -1;
-
-    this.records.sort(function (a, b) {
-      if (a[property] < b[property]) {
-        return -1 * direction;
-      }
-      else if (a[property] > b[property]) {
-        return 1 * direction;
-      }
-      else {
-        return 0;
-      }
-    });
-  };
 
   model: any = {};
   model2: any = {}; 

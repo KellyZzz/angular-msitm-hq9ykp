@@ -31,19 +31,6 @@ export class HardwareListAdminComponent implements OnInit {
   private _http: HttpClient,
   private route: ActivatedRoute) { }
 
-  public getCount() {
-    return JSON.parse(JSON.stringify(this.pager))
-    console.log(JSON.parse(JSON.stringify(this.pager)))
-  }
-  public incCount(){
-    this.pager = this.pager+1;
-    console.log(this.pager)
-  }
-  public decCount(){
-    this.pager = this.pager-1;
-    console.log(this.pager)
-  }
-
   public getData(page?: string) {
     this._dbService.getData(page)
       .subscribe(
@@ -57,14 +44,7 @@ export class HardwareListAdminComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getData(this.pager.toString());
-    // this.route.queryParams.subscribe(response => this.loadPage('1'));
-
-    //  leave it here for rn, let's try in detail first since you already set up by each specific products in detail page.                
-  }
-  
-  ngOnChanges(changes : SimpleChanges) {
-    this.getData(this.pager.toString());
+    this.getData();            
   }
 
   changeColorOne() {
@@ -75,24 +55,6 @@ export class HardwareListAdminComponent implements OnInit {
       return '#f6f6f6';
      }
   }
-
-  sort(property) {
-    this.isDesc = !this.isDesc; //change the direction    
-    this.column = property;
-    let direction = this.isDesc ? 1 : -1;
-
-    this.records.sort(function (a, b) {
-      if (a[property] < b[property]) {
-        return -1 * direction;
-      }
-      else if (a[property] > b[property]) {
-        return 1 * direction;
-      }
-      else {
-        return 0;
-      }
-    });
-  };
 
   model: any = {};
   model2: any = {}; 

@@ -26,6 +26,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ViewAllUserComponent } from './viewalluser/viewalluser.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe'; //importing the module
+import { NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+
 
 @NgModule({
   imports: [
@@ -35,6 +38,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     ReactiveFormsModule,
     Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent },
       // { path: '', component: ProductListComponent },

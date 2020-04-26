@@ -18,19 +18,15 @@
       </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let SProduct of SProducts | filter:searchText">
+    <tr *ngFor="let SProduct of SProducts | filter:searchText | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
       <td class="pointer" (click)="sort('SoftwareID')">{{SProduct.SoftwareID}}</td>
       <td class="pointer" (click)="sort('Product_Name')" >{{SProduct.Product_Name}}</td>
       <td class="pointer" (click)="sort('Short_Description')">{{SProduct.Short_Description}}</td>
       <td> <button (click)="editSProduct(i)" [routerLink]="['/sProd/admin', SProduct.SoftwareID]" > Details </button> </td>
     </tr>
   </tbody>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
  </table>
-
-  <div>
-      <button  (click)="SdecCount()" (click) = "this.getSoftData(this.pager.toString())" class="btn btn-default form-control increaseBtn">Previous</button>
-      <button  (click)="SincCount()" (click) = "this.getSoftData(this.pager.toString())"  class="btn btn-default form-control increaseBtn">Next</button>
-  </div>
 
 </div>
 

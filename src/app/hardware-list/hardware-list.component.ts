@@ -31,19 +31,6 @@ export class HardwareListComponent implements OnInit {
   private _http: HttpClient,
   private route: ActivatedRoute) { }
 
-  public getCount() {
-    return JSON.parse(JSON.stringify(this.pager))
-    console.log(JSON.parse(JSON.stringify(this.pager)))
-  }
-  public incCount(){
-    this.pager = this.pager+1;
-    console.log(this.pager)
-  }
-  public decCount(){
-    this.pager = this.pager-1;
-    console.log(this.pager)
-  }
-
   public getData(page?: string) {
     this._dbService.getData(page)
       .subscribe(
@@ -58,21 +45,8 @@ export class HardwareListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getData(this.pager.toString());
-    // this.route.queryParams.subscribe(response => this.loadPage('1'));
+    this.getData();
 
-    //  leave it here for rn, let's try in detail first since you already set up by each specific products in detail page.
-    let imageUrl = 'https://images.pexels.com/photos/1713953/pexels-photo-1713953.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
-
-    this.getBase64ImageFromURL(imageUrl).subscribe(base64data => {
-      console.log(base64data);
-      this.base64Image = 'data:image/jpg;base64,' + base64data;
-    });
-
-  }
-  
-  ngOnChanges(changes : SimpleChanges) {
-    this.getData(this.pager.toString());
   }
 
   changeColorOne() {
@@ -83,24 +57,6 @@ export class HardwareListComponent implements OnInit {
       return '#f6f6f6';
      }
   }
-
-  sort(property) {
-    this.isDesc = !this.isDesc; //change the direction    
-    this.column = property;
-    let direction = this.isDesc ? 1 : -1;
-
-    this.records.sort(function (a, b) {
-      if (a[property] < b[property]) {
-        return -1 * direction;
-      }
-      else if (a[property] > b[property]) {
-        return 1 * direction;
-      }
-      else {
-        return 0;
-      }
-    });
-  };
 
   model: any = {};
   model2: any = {}; 
