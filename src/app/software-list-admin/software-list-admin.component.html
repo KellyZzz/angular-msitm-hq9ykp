@@ -1,11 +1,7 @@
 <div class="tableWrapper">
-  
-  <div class="flex-box">
-    <button [routerLink]="['/products/admin']"> Back </button>
-  </div>
 
   <div class="search-hero">
-    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Type a Product Name">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search by Product Name">
   </div>
 
   <table class="tableWrapper">
@@ -25,8 +21,15 @@
       <td> <button (click)="editSProduct(i)" [routerLink]="['/sProd/admin', SProduct.SoftwareID]" > Details </button> </td>
     </tr>
   </tbody>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
  </table>
+
+<div class="flex-box">
+  <button [routerLink]="['/products/admin']"> Back </button>
+</div>
+
+<div class="pagination">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>  
 
 </div>
 
